@@ -1,14 +1,16 @@
-import "./App.css";
-
 import { useState } from "react";
 import { Routes, Route, useNavigate, Outlet } from "react-router-dom";
 import { Button, Navbar, Nav, Container } from "react-bootstrap";
 
+import axios from "axios";
+
+import "./App.css";
 import Detail from "./pages/detail";
 import Data from "./data";
 
 function App() {
-    const [shoes] = useState(Data);
+    const [shoes, setShoes] = useState(Data);
+    const [addShoes, setAddShoes] = useState(2);
     const navigate = useNavigate();
 
     return (
@@ -50,11 +52,26 @@ function App() {
                             <div className='container'>
                                 <div className='row'>
                                     {shoes.map((a, i) => {
-                                        return <Card shoes={shoes[i]} i={i} />;
+                                        return <Card shoes={shoes[i]} i={i} key={i} />;
                                     })}
                                 </div>
                             </div>
-                            <Button variant='outline-secondary'>Check</Button>
+                            <Button
+                                variant='outline-secondary'
+                                onClick={() => {
+                                    axios
+                                        .get(`https://codingapple1.github.io/shop/data${addShoes}.json`)
+                                        .then((result) => {
+                                            setShoes(shoes.concat(...result.data));
+                                            setAddShoes(addShoes + 1);
+                                        })
+                                        .catch(() => {
+                                            console.log("실패");
+                                        });
+                                }}
+                            >
+                                더보기
+                            </Button>
                         </>
                     }
                 />

@@ -1,0 +1,20 @@
+.alert {
+    background-color: #eceaea;
+    padding: 15px;
+    border-radius: 5px;
+    max-width: 500px;
+    width: 100%;
+    margin: auto;
+    margin-top: 1rem;
+    font-style: sans-serif;
+    font-weight: bold;
+    font-size: medium;
+}
+
+/* .button {
+    width: 7rem;
+    position: fixed;
+    justify-content: center;
+    right: 23.5rem;
+    top: 16rem;
+} */
