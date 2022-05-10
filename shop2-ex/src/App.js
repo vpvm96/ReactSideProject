@@ -13,6 +13,16 @@ function App() {
     const [addShoes, setAddShoes] = useState(2);
     const navigate = useNavigate();
 
+    const onClickHandler = () => {
+        axios
+            .get(`https://codingapple1.github.io/shop/data${addShoes}.json`)
+            .then((result) => {
+                setShoes(shoes.concat(...result.data));
+                setAddShoes(addShoes + 1);
+            })
+            .catch(e => console.error(e))
+    }
+
     return (
         <div className='App'>
             <Navbar bg='light' variant='light'>
@@ -56,22 +66,13 @@ function App() {
                                     })}
                                 </div>
                             </div>
-                            <Button
-                                variant='outline-secondary'
-                                onClick={() => {
-                                    axios
-                                        .get(`https://codingapple1.github.io/shop/data${addShoes}.json`)
-                                        .then((result) => {
-                                            setShoes(shoes.concat(...result.data));
-                                            setAddShoes(addShoes + 1);
-                                        })
-                                        .catch(() => {
-                                            console.log("실패");
-                                        });
-                                }}
-                            >
-                                더보기
-                            </Button>
+                            {addShoes < 4 && 
+                                <Button
+                                    variant='outline-secondary'
+                                    onClick={onClickHandler}
+                                >
+                                    더보기
+                                </Button>} 
                         </>
                     }
                 />
