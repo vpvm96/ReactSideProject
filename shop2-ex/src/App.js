@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { createContext, useState } from "react";
 import { Routes, Route, useNavigate, Outlet } from "react-router-dom";
 import { Button, Navbar, Nav, Container } from "react-bootstrap";
 
@@ -8,8 +8,11 @@ import "./App.css";
 import Detail from "./pages/detail";
 import Data from "./data";
 
+export const Context1 = createContext()
+
 function App() {
     const [shoes, setShoes] = useState(Data);
+    const [inventory] = useState([10, 11, 12]);
     const [addShoes, setAddShoes] = useState(2);
     const navigate = useNavigate();
 
@@ -72,11 +75,16 @@ function App() {
                                     onClick={onClickHandler}
                                 >
                                     더보기
-                                </Button>} 
+                                </Button>}
                         </>
                     }
                 />
-                <Route path='/detail/:id' element={<Detail shoes={shoes} />} />
+                <Route path='/detail/:id' element={
+                    <Context1.Provider value={{inventory}}>
+                        <Detail shoes={shoes} />
+                    </Context1.Provider>
+                    } 
+                />
                 <Route path='/event' element={<EventPage />}>
                     <Route path='one' element={<p>첫 주문시 양배추즙 서비스</p>} />
                     <Route path='two' element={<p>생일기념 쿠폰받기</p>} />
@@ -95,12 +103,12 @@ function EventPage() {
     );
 }
 
-function Card(props) {
+function Card({ shoes, i }) {
     return (
         <div className='col-md-4'>
-            <img src={`https://codingapple1.github.io/shop/shoes${props.i + 1}.jpg`} width='80%' alt='profile' />
-            <h4>{props.shoes.title}</h4>
-            <p>{props.shoes.content}</p>
+            <img src={`https://codingapple1.github.io/shop/shoes${i + 1}.jpg`} width='80%' alt='profile' />
+            <h4>{shoes.title}</h4>
+            <p>{shoes.content}</p>
         </div>
     );
 }

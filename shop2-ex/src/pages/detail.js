@@ -1,21 +1,22 @@
-import "./detail.css";
+import "./detail.css"
 
-import { useEffect, useState } from "react";
-import { Button } from "react-bootstrap";
-import { useParams } from "react-router-dom";
-import { Nav } from "react-bootstrap";
+import { useContext, useEffect, useState } from "react"
+import { Button, Nav } from "react-bootstrap"
+import { useParams } from "react-router-dom"
+import { Context1 } from './../App'
 
-function Detail(props) {
-    const { id } = useParams();
-    const products = props.shoes.find((item) => item.id === parseInt(id));
-    const [alert, setAlert] = useState(true);
-    const [tab, setTab] = useState(0);
+function Detail({ shoes }) {
+    const {id} = useParams()
+    const {inventory} = useContext(Context1)
+    const products = shoes.find((item) => item.id === parseInt(id))
+    const [alert, setAlert] = useState(true)
+    const [tab, setTab] = useState(0)
 
     useEffect(() => {
         setTimeout(() => {
-            setAlert(false);
-        }, 2000);
-    }, []);
+            setAlert(false)
+        }, 2000)
+    }, [])
 
     return (
         <div className='container'>
@@ -65,12 +66,24 @@ function Detail(props) {
                     </Nav.Link>
                 </Nav.Item>
             </Nav>
-            <TabContent tab={tab} />
+            <TabContent tab={tab} shoes={shoes} />
         </div>
     );
 }
 
-function TabContent({ tab }) {
-    return [<div>내용0</div>, <div>내용0</div>, <div>내용0</div>][tab];
+function TabContent({ tab, shoes }) {
+    let [fade, setFade] = useState('')
+
+    useEffect(() => {
+        setTimeout(() => { setFade('end') }, 100)
+
+        return () => {
+            setFade('')
+        }
+    }, [tab])
+
+    return <div className={`start ${fade}`}>
+        { [<div>{ shoes[0].title }</div>, <div>내용1</div>, <div>내용2</div>][tab] }
+    </div>
 }
 export default Detail;
