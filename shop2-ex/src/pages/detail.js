@@ -1,16 +1,17 @@
 import "./detail.css"
 
-import { useContext, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import { Button, Nav } from "react-bootstrap"
 import { useParams } from "react-router-dom"
-import { Context1 } from './../App'
+import { addItem } from '../store/productsSlice'
+import { useDispatch } from "react-redux"
 
 function Detail({ shoes }) {
     const {id} = useParams()
-    const {inventory} = useContext(Context1)
     const products = shoes.find((item) => item.id === parseInt(id))
     const [alert, setAlert] = useState(true)
     const [tab, setTab] = useState(0)
+    const dispatch = useDispatch()
 
     useEffect(() => {
         setTimeout(() => {
@@ -29,7 +30,9 @@ function Detail({ shoes }) {
                     <h4 className='pt-5'>{products.title}</h4>
                     <p>{products.content}</p>
                     <p>{products.price}</p>
-                    <Button className='button' variant='outline-secondary'>
+                    <Button className='button' variant='outline-secondary' onClick={() => {
+                        dispatch(addItem( {id : products.id, name : products.title, count : 0} ))
+                    }}>
                         Order
                     </Button>
                 </div>

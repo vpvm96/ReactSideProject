@@ -1,12 +1,13 @@
-import { createContext, useState } from "react";
-import { Routes, Route, useNavigate, Outlet } from "react-router-dom";
-import { Button, Navbar, Nav, Container } from "react-bootstrap";
+import { createContext, useState } from "react"
+import { Routes, Route, useNavigate, Outlet } from "react-router-dom"
+import { Button, Navbar, Nav, Container } from "react-bootstrap"
 
-import axios from "axios";
+import axios from "axios"
 
-import "./App.css";
-import Detail from "./pages/detail";
-import Data from "./data";
+import "./App.css"
+import Detail from "./pages/detail"
+import Cart from './pages/cart'
+import Data from "./data"
 
 export const Context1 = createContext()
 
@@ -53,6 +54,13 @@ function App() {
                         >
                             Event
                         </Nav.Link>
+                        <Nav.Link
+                            onClick={() => {
+                                navigate("/cart");
+                            }}
+                        >
+                            Cart
+                        </Nav.Link>
                     </Nav>
                 </Container>
             </Navbar>
@@ -89,6 +97,7 @@ function App() {
                     <Route path='one' element={<p>첫 주문시 양배추즙 서비스</p>} />
                     <Route path='two' element={<p>생일기념 쿠폰받기</p>} />
                 </Route>
+                <Route path='/cart' element={<Cart />}/>
             </Routes>
         </div>
     );
