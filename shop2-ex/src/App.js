@@ -12,6 +12,9 @@ import Data from "./data"
 export const Context1 = createContext()
 
 function App() {
+    const obj = {name: 'kim'}
+    localStorage.setItem('data', JSON.stringify(obj))
+
     const [shoes, setShoes] = useState(Data);
     const [inventory] = useState([10, 11, 12]);
     const [addShoes, setAddShoes] = useState(2);
