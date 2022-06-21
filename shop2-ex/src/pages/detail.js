@@ -24,7 +24,7 @@ function Detail({ shoes }) {
             {alert === true ? <div className='alert'>2초이내 구매시 할인</div> : null}
             <div className='row'>
                 <div className='col-md-6'>
-                    <img src='https://codingapple1.github.io/shop/shoes1.jpg' width='100%' alt='profile' />
+                    <img src={`https://codingapple1.github.io/shop/shoes${products.id + 1}.jpg`}width='100%' alt='profile' />
                 </div>
                 <div className='col-md-6'>
                     <h4 className='pt-5'>{products.title}</h4>

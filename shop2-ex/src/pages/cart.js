@@ -24,7 +24,6 @@ function Cart() {
                                 <td>{data.products[i].id}</td>
                                 <td>{data.products[i].name}</td>
                                 <td>{data.products[i].count}</td>
-                                <td>안녕</td>
                                 <td>
                                     <button onClick={() => {
                                         dispatch(upCount(data.products[i].id))

@@ -1,6 +1,6 @@
 import { createContext, useState } from "react"
 import { useQuery } from "react-query"
-import { Routes, Route, useNavigate, Outlet } from "react-router-dom"
+import { Routes, Route, useNavigate, Outlet, Link } from "react-router-dom"
 import { Button, Navbar, Nav, Container } from "react-bootstrap"
 
 import axios from "axios"
@@ -13,9 +13,6 @@ import Data from "./data"
 export const Context1 = createContext()
 
 function App() {
-    const obj = {name: 'kim'}
-    localStorage.setItem('data', JSON.stringify(obj))
-
     const [shoes, setShoes] = useState(Data);
     const [inventory] = useState([10, 11, 12]);
     const [addShoes, setAddShoes] = useState(2);
@@ -63,7 +60,9 @@ function App() {
                             <div className='container'>
                                 <div className='row'>
                                     {shoes.map((a, i) => {
-                                        return <Card shoes={shoes[i]} i={i} key={i} />;
+                                        return (
+                                            <Card shoes={shoes[i]} i={i} key={i} />
+                                        )
                                     })}
                                 </div>
                             </div>
@@ -105,7 +104,9 @@ function EventPage() {
 function Card({ shoes, i }) {
     return (
         <div className='col-md-4'>
-            <img src={`https://codingapple1.github.io/shop/shoes${i + 1}.jpg`} width='80%' alt='profile' />
+            <Link to={`/detail/${i}`}>
+                <img src={`https://codingapple1.github.io/shop/shoes${i + 1}.jpg`} width='80%' alt='profile' />
+            </Link>
             <h4>{shoes.title}</h4>
             <p>{shoes.content}</p>
         </div>

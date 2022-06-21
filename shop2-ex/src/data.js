@@ -1,10 +1,3 @@
-/**
- * let a = ['kim', 20]
- * a[0] - Array 호출
- * let b = { name : 'kim', age : 20 }
- * b.name - Object 호출
- */
-
 let Data = [
     // let Data = [{}, {}, {}]
     {
