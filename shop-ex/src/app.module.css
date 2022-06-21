@@ -1,0 +1,11 @@
+.app {
+  text-align: center;
+}
+
+.jumbotron {
+  background: url('./background.jpg');
+  background-size: cover;
+  color: white;
+  height: 250px;
+  padding: 50px;
+}
