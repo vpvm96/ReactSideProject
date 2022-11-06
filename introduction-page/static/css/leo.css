@@ -1,0 +1,150 @@
+* {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.wrap {
+  width: 100%;
+}
+
+.headerContainer {
+  width: 100%;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #eeeeee;
+}
+
+.headerContentBox {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.headerPicture {
+  margin-right: 15%;
+}
+
+.headerPicture > img {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  border: 2px solid #808080;
+}
+
+.headerContent {
+  line-height: 0.6;
+}
+
+.headerContent > a {
+  text-decoration: none;
+  color: black;
+}
+
+.headerContent > h2 {
+  font-weight: bold;
+  color: #b049ff;
+}
+
+.headerContent > p {
+  font-size: large;
+}
+
+.headerContent > p > span {
+  font-size: large;
+  color: #cd5bff;
+}
+
+.bodyContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.bodyCotentBox {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bodyCommentBox {
+  width: 100%;
+}
+
+.bodyContent {
+  width: 50%;
+  text-align: center;
+  font-size: large;
+}
+
+.bodyContent > h1 {
+  font-weight: bold;
+  color: #cd5bff;
+}
+
+.bodyContent > .bodyContent01 {
+  width: 100%;
+}
+
+.bodyContent > .bodyContent02 {
+  width: 100%;
+}
+
+.bodyContent > .bodyContent03 {
+  width: 100%;
+}
+
+.bodyComment {
+  width: 100%;
+  max-width: 500px;
+  margin: 20px auto 20px auto;
+  box-shadow: 0px 0px 3px 0px black;
+  padding: 20px;
+}
+
+.bodyComment > button {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: white;
+  border: white;
+  border-radius: 10px;
+  color: #b049ff;
+}
+
+.bodyComment > button:hover {
+  background-color: #b049ff;
+  color: white;
+}
+
+.bodyCommentCard {
+  width: 95%;
+  max-width: 500px;
+  margin: auto;
+}
+
+.bodyCommentCard > .card {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.card-button {
+  float: right;
+}
+
+.card-button > button {
+  background-color: white;
+  border: white;
+  border-radius: 10px;
+  color: #b049ff;
+}
+
+.card-button > button:hover {
+  background-color: #b049ff;
+  color: white;
+}

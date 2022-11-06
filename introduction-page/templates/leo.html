@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/css/leo.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/b84ec1c828.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <title>이상원의 자기소개 페이지</title>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="headerContainer">
+        <div class="headerContentBox">
+          <div class="headerPicture">
+            <img
+              class="avatar"
+              src="../static/images/leoprofile.jpg"
+              alt="avatar"
+            />
+          </div>
+          <div class="headerContent">
+            <h2>이 상 원</h2>
+            <p><span>lee sang won</span></p>
+            <p>1996.09.19</p>
+            <i class="fa-brands fa-html5 fa-2xl"></i>
+            <i class="fa-brands fa-css3 fa-2xl"></i>
+            <i class="fa-brands fa-js fa-2xl"></i>
+            <i class="fa-brands fa-react fa-2xl"></i>
+            <a
+              href="https://vpvm96.tistory.com"
+              class="fa-solid fa-blog fa-2xl"
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div class="bodyContainer">
+        <div class="bodyCotentBox">
+          <div class="bodyContent">
+            <h1>자기소개</h1>
+            <div class="bodyContent01">
+              <h2>[자신]에 대한 설명</h2>
+              <p>
+                프론트엔드 개발자가 되고싶은 이상원이라고 합니다. 제가 개발자의
+                꿈을 가지게 된 계기는 유튜브에서 비전공자 개발자 인터뷰를 보고
+                꿈을 키우게 되었습니다. 저는 누구나 만족할순 없겠지만 사용할 때
+                조금더 편하고 쾌적하게 이용할 수 있게하는 개발자가 되는것이
+                목표입니다. 저의 MBTI는 ISTJ 입니다. 현실적이고 공감을 잘 하려고
+                노력하는 사람입니다.
+              </p>
+            </div>
+            <div class="bodyContent02">
+              <h2>객관적으로 살펴본 자신의 장점</h2>
+              <p>
+                저의 장점은 저의 생각이 옳다고 생각하면 일단 제의를
+                하는편입니다. 어찌보면 단점이라고 칭할순 있지만, 누군가는
+                놓칠수도 있고, 누군가는 내가 옳다 생각해도 말을 하지못하는
+                성격에 크고 작은 부분을 놓칠수 있습니다. 하지만 이러한 성격이
+                그런 사소한 부분을 채워줄수 있는 하나의 장점이라고 생각합니다.
+              </p>
+            </div>
+            <div class="bodyContent03">
+              <h2>협업을 하는 과정에서의 자신의 스타일</h2>
+              <p>
+                저는 협업을 할 때 가장 중요한건 소통이라고 생각합니다. 누군가
+                모르는 것이 있을때 저는 도움을 주는 것을 좋아합니다. 모두가 같이
+                해결해 나가지 못하는 과정도 같이 의논하고 소통하면서 헤쳐나가는
+                스타일입니다.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="bodyCommentBox">
+          <div class="bodyComment">
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="name" />
+              <label for="floatingInput">이름</label>
+            </div>
+            <div class="form-floating">
+              <textarea
+                class="form-control"
+                id="comment"
+                style="height: 100px"
+              ></textarea>
+              <label for="floatingTextarea2">댓글 남기기</label>
+            </div>
+            <button
+              type="button"
+              onclick="save_comment()"
+              class="btn btn-outline-primary"
+            >
+              댓글 남기기
+            </button>
+          </div>
+          <div class="bodyCommentCard" id="commentList"></div>
+        </div>
+      </div>
+    </div>
+    <script src="../static/leo.js"></script>
+    <script src="../static/leoJs.js"></script>
+  </body>
+</html>
