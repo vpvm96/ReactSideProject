@@ -1,6 +1,6 @@
 $(document).ready(function () {
-  show_comment();
-});
+  show_comment()
+})
 
 function show_comment() {
   $.ajax({
@@ -8,11 +8,11 @@ function show_comment() {
     url: "/comment",
     data: {},
     success: function (response) {
-      const rows = response["post"];
+      const rows = response["post"]
       rows.forEach((item) => {
-        const uuid = item.uuid;
-        const name = item.name;
-        const comment = item.comment;
+        const uuid = item.uuid
+        const name = item.name
+        const comment = item.comment
 
         const temp_html = `<div id="card" class="card">
                                         <div id=${uuid} class="card-body">
@@ -25,9 +25,9 @@ function show_comment() {
                                             <button type="button" onclick="delete_comment(${uuid})" class="btn btn-outline-primary">삭제</button>
                                             </div>
                                         </div>
-                                    </div>`;
-        $("#commentList").append(temp_html);
-      });
+                                    </div>`
+        $("#commentList").append(temp_html)
+      })
     },
-  });
+  })
 }
