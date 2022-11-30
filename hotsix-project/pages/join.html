@@ -1,0 +1,75 @@
+<div class="join-tab">
+  <header class="joinpage_head">
+    <span class="header_text"> HOTSIX </span>
+    <span class="header_text_2"
+      >Welcome 프린이들,<br />
+      만나서 반가워!</span
+    >
+  </header>
+  <main class="main">
+    <form class="email-form" onsubmit="handleAuth(event)">
+      <div class="email-form_text">
+        <span class="email-form_text_span">이메일</span>
+      </div>
+      <input
+        class="email-input"
+        id="email"
+        type="email"
+        placeholder="이메일을 입력해주세요."
+      />
+
+      <div class="email-form_text">
+        <span class="email-form_text_span">비밀번호</span>
+      </div>
+      <input
+        class="email-input"
+        id="pw"
+        type="password"
+        placeholder="비밀번호를 입력해주세요."
+      />
+
+      <button
+        type="submit"
+        data-method="email"
+        class="email-form_btn"
+        id="authBtn"
+        value="회원가입"
+      >
+        <span class="email-form_btn_text">이메일로 회원가입하기</span>
+      </button>
+    </form>
+
+    <p class="center-text">또는</p>
+
+    <div class="icon-group">
+      <button
+        class="icon-group_btn"
+        type="button"
+        name="google"
+        onclick="socialLogin('google')"
+      >
+        <span class="icon-group_btn_icon">
+          <i class="fa-brands fa-google fa-3x"></i>
+        </span>
+        <p class="icon-group_btn_text">Google</p>
+      </button>
+
+      <button
+        class="icon-group_btn"
+        type="button"
+        name="github"
+        onclick="socialLogin('github')"
+      >
+        <span class="icon-group_btn_icon">
+          <i class="fa-brands fa-github fa-3x"></i>
+        </span>
+        <p class="icon-group_btn_text">Github</p>
+      </button>
+    </div>
+
+    <div class="join">
+      <span class="join-text">계정이 이미 있으신가요?</span>
+      <a href="#" class="join-link"><span>로그인</span></a>
+    </div>
+  </main>
+</div>

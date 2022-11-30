@@ -1,0 +1,124 @@
+<div id="wrap">
+  <header>
+    <div class="in_header">
+      <ul class="menu">
+        <li class="logo">
+          <a href="#mainpage"> HOTSIX </a>
+        </li>
+        <!-- logo end -->
+
+        <li><a href="#">커뮤니티</a></li>
+      </ul>
+      <!-- menu end -->
+
+      <div class="util_wrap">
+        <ul class="util">
+          <li>
+            <input
+              type="search"
+              id="search_icon"
+              placeholder="검색어를 입력하시오."
+            />
+            <div class="material-icons" id="material-icons_search">search</div>
+          </li>
+
+          <li>
+            <div class="material-icons" id="material-icons_book_mark">
+              turned_in_not
+            </div>
+          </li>
+
+          <li>
+            <div class="material-icons" id="material-icons_nofi">
+              notifications_active
+            </div>
+          </li>
+
+          <a href="#mypage">
+            <li class="profile_img">
+              <img
+                src="image/icons8-writer-male-96.png"
+                alt="profile_img"
+                id="profileImg"
+              />
+            </li>
+          </a>
+
+          <li>
+            <button
+              type="button"
+              class="btn btn-dark"
+              id="logOutButton"
+              onclick="logout()"
+            >
+              로그아웃
+            </button>
+          </li>
+        </ul>
+      </div>
+      <!-- util_wrap end -->
+    </div>
+    <!-- in_header end -->
+  </header>
+
+  <div class="sub_header">
+    <div class="in_header">
+      <ul class="sub_menu">
+        <li><a href="#">HOME</a></li>
+
+        <li><a href="#">FOLLOWING</a></li>
+
+        <li><a href="#">HTML</a></li>
+
+        <li><a href="#">CSS</a></li>
+
+        <li><a href="#">JAVASCRIPT</a></li>
+
+        <li><a href="#">PYTHON</a></li>
+
+        <li><a href="#">REACT</a></li>
+
+        <li><a href="#">GIT</a></li>
+
+        <li><a href="#">ALGORITHM</a></li>
+
+        <li><a href="#">Q&A</a></li>
+      </ul>
+      <!-- sub_menu end -->
+    </div>
+  </div>
+  <!-- sub_header end -->
+
+  <div class="mypage_profile">
+    <form id="profileForm" onsubmit="changeProfile(event)">
+      <label id="imgLabel" for="imgInput">
+        <img id="profileView" src="/assets/blankProfile.webp" />
+        <input
+          onchange="onFileChange(event)"
+          id="imgInput"
+          type="file"
+          accept="images/*"
+        />
+      </label>
+      <div>
+        <input
+          id="profileNickname"
+          type="text"
+          placeholder="현재 닉네임"
+          value=""
+        />
+      </div>
+      <br />
+      <input id="profileBtn" type="submit" value="프로필 변경" />
+    </form>
+  </div>
+
+  <hr />
+  <p align="center" class="mypost">내포스트</p>
+  <hr />
+  <section class="all_post">
+    <div class="container">
+      <div id="all_post_list" class="all_post_list"></div>
+    </div>
+  </section>
+</div>

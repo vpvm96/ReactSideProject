@@ -1,0 +1,202 @@
+<div id="wrap">
+  <header>
+    <div class="in_header">
+      <ul class="menu">
+        <li class="logo">
+          <a href="#mainpage"> HOTSIX </a>
+        </li>
+        <!-- logo end -->
+
+        <li><a href="#">커뮤니티</a></li>
+      </ul>
+      <!-- menu end -->
+
+      <div class="util_wrap">
+        <ul class="util">
+          <li>
+            <input type="search" id="search_icon" placeholder="검색어를 입력하시오." />
+            <div class="material-icons" id="material-icons_search">search</div>
+          </li>
+
+          <li>
+            <div class="material-icons" id="material-icons_book_mark">
+              turned_in_not
+            </div>
+          </li>
+
+          <li>
+            <div class="material-icons" id="material-icons_nofi">
+              notifications_active
+            </div>
+          </li>
+
+          <a href="#mypage">
+            <li class="profile_img">
+              <img src="image/icons8-writer-male-96.png" id="profileImg" alt="profile_img" />
+            </li>
+          </a>
+
+          <li>
+            <button type="button" class="btn btn-dark" id="logOutButton" onclick="logout()">
+              로그아웃
+            </button>
+          </li>
+        </ul>
+      </div>
+      <!-- util_wrap end -->
+    </div>
+    <!-- in_header end -->
+  </header>
+
+  <div class="sub_header">
+    <div class="in_header">
+      <ul class="sub_menu">
+        <li><a href="#">HOME</a></li>
+
+        <li><a href="#">FOLLOWING</a></li>
+
+        <li><a href="#">HTML</a></li>
+
+        <li><a href="#">CSS</a></li>
+
+        <li><a href="#">JAVASCRIPT</a></li>
+
+        <li><a href="#">PYTHON</a></li>
+
+        <li><a href="#">REACT</a></li>
+
+        <li><a href="#">GIT</a></li>
+
+        <li><a href="#">ALGORITHM</a></li>
+
+        <li><a href="#">Q&A</a></li>
+      </ul>
+      <!-- sub_menu end -->
+    </div>
+  </div>
+  <!-- sub_header end -->
+
+  <section class="issue_contents">
+    <div class="container">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="issue_contents_bg" id="issue_contents_bg_1">
+              <h1 class="img_title">개발을 어떻게 하는 거냐구요?</h1>
+
+              <div class="profile">
+                <div class="profile_img">
+                  <img src="./image/profile_img.png" alt="profile_img" />
+                </div>
+
+                <p>내 이름은 아기 상어</p>
+              </div>
+            </div>
+            <!-- issue_contents_bg end -->
+          </div>
+
+          <div class="swiper-slide">
+            <div class="issue_contents_bg" id="issue_contents_bg_2">
+              <h1 class="img_title">프론트엔드 개발자가 되려면?</h1>
+
+              <div class="profile">
+                <div class="profile_img">
+                  <img src="./image/flower.jpg" alt="profile_img" />
+                </div>
+
+                <p>나는 미래의 개발자</p>
+              </div>
+            </div>
+            <!-- issue_contents_bg end -->
+          </div>
+
+          <div class="swiper-slide">
+            <div class="issue_contents_bg" id="issue_contents_bg_3">
+              <h1 class="img_title">공부를 습관화해야 합니다!</h1>
+
+              <div class="profile">
+                <div class="profile_img">
+                  <img src="./image/puppy.jpg" alt="profile_img" />
+                </div>
+
+                <p>코린이</p>
+              </div>
+            </div>
+            <!-- issue_contents_bg end -->
+          </div>
+        </div>
+        <!-- swiper-wrapper end -->
+
+        <div class="swiper-pagination"></div>
+
+        <div class="swiper-prev">
+          <span class="material-icons">arrow_back</span>
+        </div>
+
+        <div class="swiper-next">
+          <span class="material-icons">arrow_forward</span>
+        </div>
+      </div>
+      <!-- mySwiper end -->
+    </div>
+    <!-- container end -->
+  </section>
+  <!-- issue_contents end -->
+
+  <section class="write">
+    <div class="container">
+      <div class="profile_img" id="profile_img"></div>
+      <div class="posting">
+        <input type="text" id="text_icon" placeholder="어떤 이야기를 나누고 싶나요?" />
+
+        <button type="button" class="btn btn-link" onclick="save_comment(event)">
+          <div class="material-icons" id="material-icons_edit">edit</div>
+        </button>
+      </div>
+      <!-- posting end-->
+    </div>
+    <!-- container end -->
+  </section>
+  <!-- write end -->
+
+  <section class="all_post">
+    <div class="container">
+      <div id="all_post_list" class="all_post_list"></div>
+    </div>
+  </section>
+
+
+  <footer>
+    <div class="in_footer">
+      <ul class="footer_util">
+        <li><a href="#">이용약관</a></li>
+
+        <li><a href="#">개인정보처리방침</a></li>
+      </ul>
+
+      <div class="footer_logo">
+        <a href="#">HOTSIX</a>
+      </div>
+
+      <div class="copyright">
+        <p>ⓒ 2022 HOXSIX COMPANY. ALL RIGHTS RESERVED..</p>
+      </div>
+    </div>
+    <!-- in_footer end-->
+  </footer>
+
+</div>
+<!-- wrap end -->
+
+<!-- 모달입니다. -->
+<div class="modal_main" id="modal_top">
+  <div class="modal_content">
+    내용을 변경하시겠어요?
+    <textarea placeholder="글을 수정하세요." id="editContent"></textarea>
+    <div class="buttons">
+      <button style="margin-right:20px;" onclick="update_comment(event)">제출</button>
+      <button id="modal_cancel" onclick="updateCancelbutton(event)">취소</button>
+    </div>
+  </div>
+</div>
+<!-- 모달입니다. -->
