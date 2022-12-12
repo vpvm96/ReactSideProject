@@ -93,7 +93,6 @@ const TodoBodyTodoForm = styled.form`
 const TodoBodyFormButton = styled.button`
   width: 200px;
   height: 20px;
-  margin-top: 50px;
 `
 
 const TodoBodyTitleInputLabel = styled.label`
