@@ -16,7 +16,11 @@ const TodoListContent = ({
 
   return (
     <TodoContentContainer>
-      <TodoTitle>{title}</TodoTitle>
+      {isDone === false ? (
+        <TodoTitle>{title}</TodoTitle>
+      ) : (
+        <TodoTitle>{title}✅</TodoTitle>
+      )}
       <TodoContent>{content}</TodoContent>
       {isDone === false ? (
         <TodoDataDeleteButton onClick={handleTodoUpdate(true)}>
