@@ -1,15 +1,29 @@
+import { useEffect, useState } from "react"
 import { useLocation } from "react-router-dom"
 import styled from "styled-components"
+import ErrorPage from "./ErrorPage"
 
 const TodoListDetailPage = () => {
   const location = useLocation()
-  const { title, content } = location.state
+  const [formData, setFormData] = useState({})
+  const [error, setError] = useState(false)
 
+  useEffect(() => {
+    if (!location) return
+    if (location.state) {
+      setFormData(location.state)
+    } else {
+      setError(true)
+    }
+  }, [location])
+  if (error) {
+    return <ErrorPage />
+  }
   return (
     <TodoDetailWraper>
       <TodoDetailContainer>
-        <TodoDetailTitleBox>제목 :{title}</TodoDetailTitleBox>
-        <TodoDetailContentBox>내용: {content}</TodoDetailContentBox>
+        <TodoDetailTitleBox>제목 :{formData.title}</TodoDetailTitleBox>
+        <TodoDetailContentBox>내용: {formData.content}</TodoDetailContentBox>
       </TodoDetailContainer>
     </TodoDetailWraper>
   )

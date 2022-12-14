@@ -17,7 +17,7 @@ const TodoListContent = ({
 
   return (
     <TodoContentContainer>
-      <Link to={`/todo/${id.slice(0, 8)}`} state={{ title, content }}>
+      <Link to={`todo/${id.slice(0, 8)}`} state={{ title, content }}>
         상세 페이지
       </Link>
       {isDone === false ? (
