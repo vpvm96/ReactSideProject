@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "react-router-dom"
 import styled from "styled-components"
 
 const TodoListContent = ({
@@ -16,6 +17,9 @@ const TodoListContent = ({
 
   return (
     <TodoContentContainer>
+      <Link to={id.slice(0, 8)} state={{ title, content }}>
+        상세 페이지
+      </Link>
       {isDone === false ? (
         <TodoTitle>{title}</TodoTitle>
       ) : (

@@ -5,7 +5,7 @@ const TodoListHeader = () => {
   return (
     <TodoHeaderWrapper>
       <TodoHeaderContainer>
-        <h1>Test</h1>
+        <TodoHeaderTitle>Test</TodoHeaderTitle>
       </TodoHeaderContainer>
     </TodoHeaderWrapper>
   )
@@ -18,6 +18,10 @@ const TodoHeaderWrapper = styled.div`
 const TodoHeaderContainer = styled.div`
   width: 100%;
   height: 100%;
+`
+
+const TodoHeaderTitle = styled.h1`
+  padding: 1rem;
 `
 
 export default TodoListHeader

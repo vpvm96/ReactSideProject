@@ -75,6 +75,7 @@ const TodoBodyContainer = styled.div`
   display: flex;
   width: 100%;
   height: 100%;
+  gap: 5rem;
 `
 
 const TodoBodyFormBox = styled.div`
@@ -89,6 +90,7 @@ const TodoBodyTodoForm = styled.form`
   display: flex;
   flex-direction: column;
   width: 100%;
+  margin-left: 3rem;
 `
 const TodoBodyFormButton = styled.button`
   width: 200px;
