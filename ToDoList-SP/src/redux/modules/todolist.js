@@ -23,14 +23,7 @@ export const todoDelete = (payload) => {
   }
 }
 
-const initialState = [
-  {
-    id: "6af6b39b-0742-460a-812a-c216aa73d452",
-    title: "테스트 타이틀임",
-    content: "테스트 내용임",
-    isDone: false,
-  },
-]
+const initialState = []
 
 const todolist = (state = initialState, action) => {
   switch (action.type) {
