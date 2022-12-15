@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react"
-import { useLocation } from "react-router-dom"
+import { useLocation, useNavigate } from "react-router-dom"
 import styled from "styled-components"
 import ErrorPage from "./ErrorPage"
 
 const TodoListDetailPage = () => {
   const location = useLocation()
+  const navigate = useNavigate()
   const [formData, setFormData] = useState({})
   const [error, setError] = useState(false)
 
@@ -16,14 +17,19 @@ const TodoListDetailPage = () => {
       setError(true)
     }
   }, [location])
-  if (error) {
-    return <ErrorPage />
-  }
+  if (error) return <ErrorPage />
   return (
     <TodoDetailWraper>
       <TodoDetailContainer>
-        <TodoDetailTitleBox>제목 :{formData.title}</TodoDetailTitleBox>
-        <TodoDetailContentBox>내용: {formData.content}</TodoDetailContentBox>
+        <TodoDetailDescBox>
+          <TodoDetailTitleBox>제목 :{formData.title}</TodoDetailTitleBox>
+          <TodoDetailContentBox>내용: {formData.content}</TodoDetailContentBox>
+        </TodoDetailDescBox>
+        <TodoDetailBtnBox>
+          <TodoDetailBackButton onClick={() => navigate(-1)}>
+            꺼져뒤로
+          </TodoDetailBackButton>
+        </TodoDetailBtnBox>
       </TodoDetailContainer>
     </TodoDetailWraper>
   )
@@ -43,6 +49,15 @@ const TodoDetailContainer = styled.div`
   align-items: center;
 `
 
+const TodoDetailDescBox = styled.div`
+  width: 50%;
+`
+
+const TodoDetailBtnBox = styled.div`
+  width: 50%;
+  margin-top: 1rem;
+`
+
 const TodoDetailTitleBox = styled.div`
   width: 50%;
   margin-bottom: 1rem;
@@ -50,4 +65,8 @@ const TodoDetailTitleBox = styled.div`
 const TodoDetailContentBox = styled.div`
   width: 50%;
 `
+const TodoDetailBackButton = styled.button`
+  width: 100px;
+`
+
 export default TodoListDetailPage
