@@ -27,7 +27,7 @@ const TodoListDetailPage = () => {
         </TodoDetailDescBox>
         <TodoDetailBtnBox>
           <TodoDetailBackButton onClick={() => navigate(-1)}>
-            꺼져뒤로
+            난 나갈래
           </TodoDetailBackButton>
         </TodoDetailBtnBox>
       </TodoDetailContainer>
