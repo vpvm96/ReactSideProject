@@ -18,6 +18,7 @@ const TodoListDetailPage = () => {
     }
   }, [location])
   if (error) return <ErrorPage />
+
   return (
     <TodoDetailWraper>
       <TodoDetailContainer>

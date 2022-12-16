@@ -5,14 +5,13 @@ const TodoCustomInput = ({
   type,
   id,
   labelText,
-  htmlFor,
   placeholder,
   todoEvent,
   errorMsg,
 }) => {
   return (
     <React.Fragment>
-      <TodoInputLabel htmlFor={htmlFor}>{labelText}</TodoInputLabel>
+      <TodoInputLabel htmlFor={id}>{labelText}</TodoInputLabel>
       <TodoInput type={type} id={id} placeholder={placeholder} {...todoEvent} />
       <TodoBodyFormErrorAlert>{errorMsg}</TodoBodyFormErrorAlert>
     </React.Fragment>
