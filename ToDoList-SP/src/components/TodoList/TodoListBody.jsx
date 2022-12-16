@@ -30,7 +30,7 @@ const TodoListBody = ({
             <TodoBodyTitleInput
               type="text"
               id="title"
-              placeholder="제목 ㄱㄱ"
+              placeholder="제목을 입력해주세요."
               {...onTodoFormEvent("title")}
             />
             <TodoBodyFormErrorAlert>
@@ -42,7 +42,7 @@ const TodoListBody = ({
             <TodoBodyContentInput
               type="text"
               id="content"
-              placeholder="내용 빨리 적어"
+              placeholder="내용을 입력해주세요."
               {...onTodoFormEvent("content")}
             />
             <TodoBodyFormErrorAlert>

@@ -4,9 +4,9 @@ import { Link } from "react-router-dom"
 const ErrorPage = () => {
   return (
     <div>
-      <h1>에러야 나가!!!!!!!</h1>
+      <h1>이 곳은 지옥입니다 나가세요.</h1>
       <button>
-        <Link to="/">나가</Link>
+        <Link to="/">나가기</Link>
       </button>
     </div>
   )

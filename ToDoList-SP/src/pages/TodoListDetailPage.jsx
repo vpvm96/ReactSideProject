@@ -27,7 +27,7 @@ const TodoListDetailPage = () => {
         </TodoDetailDescBox>
         <TodoDetailBtnBox>
           <TodoDetailBackButton onClick={() => navigate(-1)}>
-            난 나갈래
+            나가기
           </TodoDetailBackButton>
         </TodoDetailBtnBox>
       </TodoDetailContainer>
@@ -42,11 +42,6 @@ const TodoDetailWraper = styled.div`
 
 const TodoDetailContainer = styled.div`
   width: 100%;
-  height: 90%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 `
 
 const TodoDetailDescBox = styled.div`

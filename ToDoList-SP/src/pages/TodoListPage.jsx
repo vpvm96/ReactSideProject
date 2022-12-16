@@ -2,7 +2,6 @@ import { useDispatch, useSelector } from "react-redux"
 import { v4 as uuidv4 } from "uuid"
 import { todoCreate, todoUpdate, todoDelete } from "../redux/modules/todolist"
 import useTodoForm from "../hooks/useTodoForm"
-import TodoListHeader from "../components/TodoList/TodoListHeader"
 import TodoListBody from "../components/TodoList/TodoListBody"
 import styled from "styled-components"
 
@@ -20,12 +19,17 @@ const TodoListPage = () => {
   }
 
   const handleTodoDelete = (id) => () => {
+    if (window.confirm("삭제 하시겠습니까?")) {
+      alert("삭제 되었습니다.")
+    } else {
+      alert("취소 되었습니다.")
+      return
+    }
     dispatch(todoDelete(id))
   }
 
   return (
     <TodoPageWrap>
-      <TodoListHeader />
       <TodoListBody
         todoFormData={todoFormData}
         error={errors}

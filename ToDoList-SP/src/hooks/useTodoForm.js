@@ -4,8 +4,8 @@ import { yupResolver } from "@hookform/resolvers/yup"
 
 const todoListResolver = yup
   .object({
-    title: yup.string().required("왜 안적음?"),
-    content: yup.string().required("이유가 뭐임?"),
+    title: yup.string().required("제목좀..."),
+    content: yup.string().required("내용좀..."),
   })
   .required()
 
