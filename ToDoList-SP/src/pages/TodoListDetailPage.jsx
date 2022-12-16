@@ -22,7 +22,7 @@ const TodoListDetailPage = () => {
     <TodoDetailWraper>
       <TodoDetailContainer>
         <TodoDetailDescBox>
-          <TodoDetailTitleBox>제목 :{formData.title}</TodoDetailTitleBox>
+          <TodoDetailTitleBox>제목: {formData.title}</TodoDetailTitleBox>
           <TodoDetailContentBox>내용: {formData.content}</TodoDetailContentBox>
         </TodoDetailDescBox>
         <TodoDetailBtnBox>

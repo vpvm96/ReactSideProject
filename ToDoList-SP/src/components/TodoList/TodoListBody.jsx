@@ -1,4 +1,5 @@
 import TodoListContent from "./TodoListContent"
+import TodoCustomInput from "./TodoCustomInput"
 import styled from "styled-components"
 
 const TodoListBody = ({
@@ -24,30 +25,24 @@ const TodoListBody = ({
           <TodoBodyTodoForm
             onSubmit={onTodoFormSubmitEvent(handleTodoFormSubmit)}
           >
-            <TodoBodyTitleInputLabel htmlFor="title">
-              타이틀
-            </TodoBodyTitleInputLabel>
-            <TodoBodyTitleInput
+            <TodoCustomInput
               type="text"
               id="title"
+              labelText="제목"
+              htmlFor="title"
               placeholder="제목을 입력해주세요."
-              {...onTodoFormEvent("title")}
+              todoEvent={onTodoFormEvent("title")}
+              errorMsg={error.title?.message}
             />
-            <TodoBodyFormErrorAlert>
-              {error.title?.message}
-            </TodoBodyFormErrorAlert>
-            <TodoBodyContentInputLabel htmlFor="content">
-              내용
-            </TodoBodyContentInputLabel>
-            <TodoBodyContentInput
+            <TodoCustomInput
               type="text"
               id="content"
+              labelText="내용"
+              htmlFor="content"
               placeholder="내용을 입력해주세요."
-              {...onTodoFormEvent("content")}
+              todoEvent={onTodoFormEvent("content")}
+              errorMsg={error.content?.message}
             />
-            <TodoBodyFormErrorAlert>
-              {error.content?.message}
-            </TodoBodyFormErrorAlert>
             <TodoBodyFormButton type="submit">클릭</TodoBodyFormButton>
           </TodoBodyTodoForm>
         </TodoBodyFormBox>
@@ -56,7 +51,6 @@ const TodoListBody = ({
             <TodoListContent
               key={todo.id}
               todoFormData={todo}
-              error={error}
               onTodoUpdateEvent={onTodoUpdateEvent}
               onTodoDeleteEvent={onTodoDeleteEvent}
             />
@@ -95,25 +89,6 @@ const TodoBodyTodoForm = styled.form`
 const TodoBodyFormButton = styled.button`
   width: 200px;
   height: 20px;
-`
-
-const TodoBodyTitleInputLabel = styled.label`
-  width: 300px;
-`
-
-const TodoBodyTitleInput = styled.input`
-  width: 300px;
-`
-const TodoBodyContentInputLabel = styled.label`
-  width: 300px;
-`
-
-const TodoBodyContentInput = styled.input`
-  width: 300px;
-`
-
-const TodoBodyFormErrorAlert = styled.p`
-  width: 100px;
 `
 
 export default TodoListBody
