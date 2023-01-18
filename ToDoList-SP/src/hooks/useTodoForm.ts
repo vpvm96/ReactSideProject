@@ -2,9 +2,10 @@ import { useForm } from "react-hook-form"
 import * as yup from "yup"
 import { yupResolver } from "@hookform/resolvers/yup"
 
-export interface HookFormProps {
+export interface TodoFormValue {
   title: string
   content: string
+  errors: { title: { message: string }; content: { message: string } }
 }
 
 export const todoListResolver = yup
@@ -20,7 +21,7 @@ const useTodoForm = () => {
     formState: { errors },
     reset,
     handleSubmit,
-  } = useForm<HookFormProps>({ resolver: yupResolver(todoListResolver) })
+  } = useForm<TodoFormValue>({ resolver: yupResolver(todoListResolver) })
 
   return {
     register,

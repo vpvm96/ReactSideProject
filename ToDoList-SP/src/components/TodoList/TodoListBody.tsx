@@ -17,7 +17,7 @@ interface TodoListbodyProps {
   onTodoCreateEvent: (data: TodoDataType) => void
   onTodoUpdateEvent: (data: TodoDataType) => void
   onTodoDeleteEvent: (
-    data: TodoDataType
+    id: TodoDataType
   ) => React.MouseEventHandler<HTMLButtonElement>
   onTodoFormSubmitEvent: any
 }
@@ -33,7 +33,7 @@ const TodoListBody = ({
   onTodoFormSubmitEvent,
 }: TodoListbodyProps) => {
   const handleTodoFormSubmit = (
-    data: any,
+    data: TodoDataType,
     e: React.FormEvent<HTMLFormElement>
   ) => {
     onTodoCreateEvent(data)

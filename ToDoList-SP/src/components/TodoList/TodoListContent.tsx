@@ -5,13 +5,13 @@ import styled from "styled-components"
 interface TodoDataType {
   title: string
   content: string
-  id: string
-  isDone: boolean
+  id?: string
+  isDone?: boolean
 }
 interface TodoListContentProps {
   todoFormData: any
   onTodoDeleteEvent: (
-    data: TodoDataType
+    id: TodoDataType
   ) => React.MouseEventHandler<HTMLButtonElement>
   onTodoUpdateEvent: (data: TodoDataType) => void
 }
