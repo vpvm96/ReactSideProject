@@ -2,10 +2,18 @@ import React from "react"
 import { Link } from "react-router-dom"
 import styled from "styled-components"
 
+interface TodoDataType {
+  title: string
+  content: string
+  id: string
+  isDone: boolean
+}
 interface TodoListContentProps {
   todoFormData: any
-  onTodoDeleteEvent: ({}) => React.MouseEventHandler<HTMLButtonElement>
-  onTodoUpdateEvent: ({}) => void
+  onTodoDeleteEvent: (
+    data: TodoDataType
+  ) => React.MouseEventHandler<HTMLButtonElement>
+  onTodoUpdateEvent: (data: TodoDataType) => void
 }
 
 const TodoListContent = ({

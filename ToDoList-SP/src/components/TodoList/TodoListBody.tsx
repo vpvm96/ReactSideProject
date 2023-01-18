@@ -3,14 +3,22 @@ import TodoListContent from "./TodoListContent"
 import TodoCustomInput from "./TodoCustomInput"
 import styled from "styled-components"
 
+interface TodoDataType {
+  title: string
+  content: string
+  id: string
+  isDone: boolean
+}
 interface TodoListbodyProps {
   todoFormData: any
   error: any
   reset: ({}) => void
   onTodoFormEvent: any
-  onTodoCreateEvent: ({}) => void
-  onTodoUpdateEvent: ({}) => void
-  onTodoDeleteEvent: ({}) => React.MouseEventHandler<HTMLButtonElement>
+  onTodoCreateEvent: (data: TodoDataType) => void
+  onTodoUpdateEvent: (data: TodoDataType) => void
+  onTodoDeleteEvent: (
+    data: TodoDataType
+  ) => React.MouseEventHandler<HTMLButtonElement>
   onTodoFormSubmitEvent: any
 }
 
