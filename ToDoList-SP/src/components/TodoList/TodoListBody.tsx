@@ -6,13 +6,13 @@ import styled from "styled-components"
 interface TodoDataType {
   title: string
   content: string
-  id: string
-  isDone: boolean
+  id?: string
+  isDone?: boolean
 }
 interface TodoListbodyProps {
   todoFormData: any
   error: any
-  reset: ({}) => void
+  reset: (data: TodoDataType) => void
   onTodoFormEvent: any
   onTodoCreateEvent: (data: TodoDataType) => void
   onTodoUpdateEvent: (data: TodoDataType) => void
