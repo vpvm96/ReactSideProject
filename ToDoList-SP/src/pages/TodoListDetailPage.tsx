@@ -6,7 +6,10 @@ import ErrorPage from "./ErrorPage"
 const TodoListDetailPage = () => {
   const location = useLocation()
   const navigate = useNavigate()
-  const [formData, setFormData] = useState({})
+  const [formData, setFormData] = useState({
+    title: "",
+    content: "",
+  })
   const [error, setError] = useState(false)
 
   useEffect(() => {

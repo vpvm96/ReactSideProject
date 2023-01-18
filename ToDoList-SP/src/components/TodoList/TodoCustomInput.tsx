@@ -1,6 +1,15 @@
 import React from "react"
 import styled from "styled-components"
 
+interface TodoCustomInputProps {
+  type: string
+  id: string
+  labelText: string
+  placeholder: string
+  todoEvent: () => void
+  errorMsg: string
+}
+
 const TodoCustomInput = ({
   type,
   id,
@@ -8,7 +17,7 @@ const TodoCustomInput = ({
   placeholder,
   todoEvent,
   errorMsg,
-}) => {
+}: TodoCustomInputProps) => {
   return (
     <React.Fragment>
       <TodoInputLabel htmlFor={id}>{labelText}</TodoInputLabel>

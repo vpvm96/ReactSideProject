@@ -2,14 +2,20 @@ import React from "react"
 import { Link } from "react-router-dom"
 import styled from "styled-components"
 
+interface TodoListContentProps {
+  todoFormData: any
+  onTodoDeleteEvent: ({}) => React.MouseEventHandler<HTMLButtonElement>
+  onTodoUpdateEvent: ({}) => void
+}
+
 const TodoListContent = ({
   todoFormData,
   onTodoDeleteEvent,
   onTodoUpdateEvent,
-}) => {
+}: TodoListContentProps) => {
   const { id, title, content, isDone } = todoFormData
 
-  const handleTodoUpdate = (status) => () => {
+  const handleTodoUpdate = (status: boolean) => () => {
     const isDone = status === true ? true : false
 
     onTodoUpdateEvent({ ...todoFormData, isDone })

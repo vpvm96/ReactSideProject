@@ -2,7 +2,12 @@ import { useForm } from "react-hook-form"
 import * as yup from "yup"
 import { yupResolver } from "@hookform/resolvers/yup"
 
-const todoListResolver = yup
+export interface HookFormProps {
+  title: string
+  content: string
+}
+
+export const todoListResolver = yup
   .object({
     title: yup.string().required("제목좀..."),
     content: yup.string().required("내용좀..."),
@@ -15,7 +20,7 @@ const useTodoForm = () => {
     formState: { errors },
     reset,
     handleSubmit,
-  } = useForm({ resolver: yupResolver(todoListResolver) })
+  } = useForm<HookFormProps>({ resolver: yupResolver(todoListResolver) })
 
   return {
     register,

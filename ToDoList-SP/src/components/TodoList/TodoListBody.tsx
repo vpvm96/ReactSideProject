@@ -1,6 +1,18 @@
+import { TodoTypes } from "../../redux/modules/todolist"
 import TodoListContent from "./TodoListContent"
 import TodoCustomInput from "./TodoCustomInput"
 import styled from "styled-components"
+
+interface TodoListbodyProps {
+  todoFormData: any
+  error: any
+  reset: ({}) => void
+  onTodoFormEvent: any
+  onTodoCreateEvent: ({}) => void
+  onTodoUpdateEvent: ({}) => void
+  onTodoDeleteEvent: ({}) => React.MouseEventHandler<HTMLButtonElement>
+  onTodoFormSubmitEvent: any
+}
 
 const TodoListBody = ({
   todoFormData,
@@ -11,11 +23,13 @@ const TodoListBody = ({
   onTodoUpdateEvent,
   onTodoDeleteEvent,
   onTodoFormSubmitEvent,
-}) => {
-  const handleTodoFormSubmit = (data, e) => {
+}: TodoListbodyProps) => {
+  const handleTodoFormSubmit = (
+    data: any,
+    e: React.FormEvent<HTMLFormElement>
+  ) => {
     onTodoCreateEvent(data)
     reset({ title: "", content: "" })
-    e.target[0].focus()
   }
 
   return (
@@ -45,7 +59,7 @@ const TodoListBody = ({
           </TodoBodyTodoForm>
         </TodoBodyFormBox>
         <TodoBodyContentBox>
-          {todoFormData.map((todo) => (
+          {todoFormData.map((todo: TodoTypes) => (
             <TodoListContent
               key={todo.id}
               todoFormData={todo}
